@@ -1,0 +1,44 @@
+$blockSize: 50px
+$pineapple: #513B56
+$purple: #525174
+$blue: #348AA7
+$aquamarine: #5DD39E
+$green: #BCE784
+.block
+  display: inline-block
+
+  line-height: 0
+  width: $blockSize
+  height: $blockSize
+
+  font-size: 0
+.container
+  grid-column-gap: 2px
+  grid-row-gap: 2px
+  display: grid
+  grid-template-columns: repeat(15, $blockSize)
+
+.empty
+  background-color: $blue
+.occupied
+  background-color: $pineapple
+  background-image: url("png/stone.png")
+  background-size: contain
+
+.bomb
+  background-image: url("png/bomb.png")
+  background-color: #525174
+  background-size: contain
+  z-index: 1
+.player
+  background-image: url("png/bomberman.png")
+  background-size: contain
+  z-index: 2
+.hor_fire
+  background-color: #BCE784
+  background-image: url("png/gorit.jpeg")
+  background-size: contain
+.ver_fire
+  background-image: url("png/gorit.jpeg")
+  background-size: contain
+  background-color: #BCE784
