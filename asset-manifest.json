@@ -1,13 +1,13 @@
 {
   "main.css": "/Bomberman/static/css/main.4efc38e1.chunk.css",
-  "main.js": "/Bomberman/static/js/main.576e9841.chunk.js",
-  "main.js.map": "/Bomberman/static/js/main.576e9841.chunk.js.map",
+  "main.js": "/Bomberman/static/js/main.35aaefa9.chunk.js",
+  "main.js.map": "/Bomberman/static/js/main.35aaefa9.chunk.js.map",
   "runtime~main.js": "/Bomberman/static/js/runtime~main.190bf62b.js",
   "runtime~main.js.map": "/Bomberman/static/js/runtime~main.190bf62b.js.map",
   "static/js/2.e49762ef.chunk.js": "/Bomberman/static/js/2.e49762ef.chunk.js",
   "static/js/2.e49762ef.chunk.js.map": "/Bomberman/static/js/2.e49762ef.chunk.js.map",
   "index.html": "/Bomberman/index.html",
-  "precache-manifest.ca5fd524ccec24ad98927c0cbfc758e1.js": "/Bomberman/precache-manifest.ca5fd524ccec24ad98927c0cbfc758e1.js",
+  "precache-manifest.eb199780ffacac7f378fa1438904c302.js": "/Bomberman/precache-manifest.eb199780ffacac7f378fa1438904c302.js",
   "service-worker.js": "/Bomberman/service-worker.js",
   "static/css/main.4efc38e1.chunk.css.map": "/Bomberman/static/css/main.4efc38e1.chunk.css.map",
   "static/media/Field.css": "/Bomberman/static/media/bomberman.cea44ec2.png"
