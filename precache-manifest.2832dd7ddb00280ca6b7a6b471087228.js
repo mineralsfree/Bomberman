@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "d8b7c0d2f9113de6474e",
-    "url": "/Bomberman/static/css/main.4efc38e1.chunk.css"
+    "revision": "84e7ad2ef5ea712abcc1",
+    "url": "/Bomberman/static/css/main.adfdde4d.chunk.css"
   },
   {
-    "revision": "d8b7c0d2f9113de6474e",
-    "url": "/Bomberman/static/js/main.d8b7c0d2.chunk.js"
+    "revision": "84e7ad2ef5ea712abcc1",
+    "url": "/Bomberman/static/js/main.84e7ad2e.chunk.js"
   },
   {
     "revision": "190bf62b19dbdf635153",
@@ -20,7 +20,11 @@ self.__precacheManifest = [
     "url": "/Bomberman/static/media/bomberman.cea44ec2.png"
   },
   {
-    "revision": "f012f3412a17e0a4106e1585daa0be3f",
+    "revision": "667cc7c87180bc7d0f74ddb520369830",
+    "url": "/Bomberman/static/media/enemy.667cc7c8.png"
+  },
+  {
+    "revision": "ac3724611fe4a7e4092fbbac33a52570",
     "url": "/Bomberman/index.html"
   }
 ];
