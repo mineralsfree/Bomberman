@@ -8,12 +8,14 @@ class App extends Component {
         this.escFunction = this.escFunction.bind(this);
         this.update = this.update.bind(this);
         this.position = pos;
+        this.enemyPos = {};
         this.delta = {x: 0, y: 0};
         this.field = [];
         this.name='';
         this.registred = false;
         this.bomb = false;
-        this.socket = new WebSocket('ws://localhost:5000/');
+        this.socket = new WebSocket('ws://46.101.164.131:5000/');
+        this.died = false
     }
 
     escFunction(event) {
@@ -25,7 +27,6 @@ class App extends Component {
         this.socket.send(JSON.stringify(obj));
         this.registred = true;
       }
-
       this.delta = {x: 0, y: 0};
         switch (event.keyCode) {
             case 39:
@@ -51,8 +52,9 @@ class App extends Component {
           name: this.name,
           time: new Date().getTime()
         };
-        let delta = JSON.stringify(socketRequest);
-      this.socket.send(delta);
+        let inf = JSON.stringify(socketRequest);
+      console.log(socketRequest);
+      this.socket.send(inf);
         this.forceUpdate(()=> this.bomb = false);
         this.delta = {x: 0, y: 0};
     }
@@ -62,8 +64,20 @@ class App extends Component {
     componentDidMount() {
       //this.socket.onopen = () => this.socket.send(JSON.stringify({type: 'greet', payload: 'F2AgataF'}));
       this.socket.onmessage = ({data}) => {
-        console.log(data);
-        this.field = JSON.parse(data).field;
+        let obj  = JSON.parse(data);
+        console.log(obj);
+        if(obj.hasOwnProperty('pos')){
+          this.position = obj.pos;
+        }
+        if(obj.hasOwnProperty('enemyPos')){
+          this.enemyPos = obj.enemyPos;
+        } else {
+          this.enemyPos = {};
+        }
+        if(obj.hasOwnProperty('died')){
+          this.died = true;
+        }
+        this.field = obj.field;
         this.forceUpdate();
       };
         document.addEventListener("keydown", this.escFunction, false);
@@ -75,19 +89,25 @@ class App extends Component {
 
     render() {
         const {value} = this.props;
-        return (
+        if (!this.died){
+          return (
             <div className="App">
-                <Field
-                    position={this.position}
-                    field={this.field}
-                    delta={this.delta}
-                    bomb = {this.bomb}
-                    callback = {this.update}
-                    socket = {this.socket}
-                />
+              <Field
+                position={this.position}
+                field={this.field}
+                delta={this.delta}
+                bomb = {this.bomb}
+                callback = {this.update}
+                socket = {this.socket}
+                enemy = {this.enemyPos}
+              />
 
             </div>
-        );
+          );
+        } else return(
+          <div className={'died'}>F! You died - F5 to try enter game room</div>
+        )
+
     }
 }
 
